@@ -1,0 +1,4 @@
+<pocketitems>
+    <!-- Robert -->
+    <card type="object" pickup="10" description="Special shortcut" name="Backrooms Access Keycard" hud="RobertKeycard" hidden="true" mimiccharge="8" />
+</pocketitems>

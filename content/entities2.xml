@@ -1,0 +1,34 @@
+<entities anm2root="gfx/" version="5">
+	<!-- Beelze -->
+	<entity id="3" variant="598" name="Botfly Maggot" anm2path="familiar_botflymaggot.anm2" 
+		friction="1" numGridCollisionPoints="12" collisionMass="10" collisionRadius="15" collisionInterval="1" 
+		shadowSize="11"/>
+	
+	<entity id="3" variant="599" name="Utility Fly" anm2path="familiar_bulb.anm2" 
+		friction="1" numGridCollisionPoints="12" collisionMass="5" collisionRadius="17" 
+		shadowSize="14" 
+		tags="fly"/>
+	<!-- Robert -->
+    <entity name="Robert Birthright Door"
+		id="1000" variant="50"
+		anm2path="grid/robert_birthright_door.anm2"
+		shadowSize="0" friction="1">
+		<gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
+	</entity>
+	<!-- Churchill -->
+	<entity anm2path="entities/gear.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="3" collisionRadius="12" friction="1" id="5" name="Churchill Gear Piece" numGridCollisionPoints="24" shadowSize="0" stageHP="0" variant="67"/>
+	<!-- Infernus -->
+    <entity anm2path="tears/infernus_tear.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="8" collisionRadius="7" friction="1" id="2" name="Infernus Tear" numGridCollisionPoints="8" shadowSize="8" stageHP="0" variant="0">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
+    </entity>
+    <entity anm2path="tears/infernus_tear_b.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="8" collisionRadius="7" friction="1" id="2" name="Infernus Tear B" numGridCollisionPoints="8" shadowSize="8" stageHP="0" variant="1">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
+    </entity>
+	<entity name="Infernus Napalm UI" id="1000" anm2path="ui/ability_napalm.anm2" />
+	<entity name="Infernus Flame Dash UI" id="1000" anm2path="ui/ability_flame_dash.anm2" />
+	<entity name="Infernus Afterburn UI" id="1000" anm2path="ui/ability_afterburn.anm2" />
+	<entity name="Infernus Concussive Combustion UI" id="1000" anm2path="ui/ability_concussive_combustion.anm2" />
+	<entity name="Infernus Thrown Napalm" id="1000" anm2path="effects/thrown_napalm.anm2" friction="1" shadowSize="0"/>
+
+	<entity name="Infernus Concussive Combustion Explosion" id="1000" anm2path="effects/concussive_combustion_explosion.anm2" />
+</entities>

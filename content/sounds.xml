@@ -1,0 +1,97 @@
+<sounds root="sfx/">
+	<!-- Churchill -->
+	<sound name="Churchill Windup">
+		<sample weight="1" path="churchill_windup.wav" />
+	</sound>
+	
+	<sound name="Churchill Winddown">
+		<sample weight="1" path="churchill_winddown.wav" />  
+	</sound>
+
+	<sound name="TChurchill Jam">
+		<sample weight="1" path="tainted_churchill_jam.wav"/>
+	</sound>
+
+	<sound name="TChurchill Timing">
+		<sample weight="1" path="tainted_churchil_timing_1.wav"/>
+		<sample weight="1" path="tainted_churchil_timing_2.wav"/>
+		<sample weight="1" path="tainted_churchil_timing_3.wav"/>
+		<sample weight="1" path="tainted_churchil_timing_4.wav"/>
+	</sound>
+	<!-- Infernus -->
+	<sound name="Napalm Cast">
+	<sample weight="1" path="infernus/napalm_cast.wav" />
+	</sound>
+	<sound name="Flame Dash Cast">
+	<sample weight="1" path="infernus/flame_dash_cast.wav" />
+	</sound>
+	<sound name="Afterburn Proc">
+	<sample weight="1" path="infernus/afterburn_proc_1.wav" />
+	</sound>
+	<sound name="Concussive Combustion Cast">
+	<sample weight="1" path="infernus/concussive_combustion_cast.wav" />
+	</sound>
+	<sound name="Concussive Combustion Explosion">
+	<sample weight="1" path="infernus/concussive_combustion_explosion.wav" />
+	</sound>
+	<sound name="Infernus Shoot">
+	<sample weight="1" path="infernus/infernus_shoot_01.wav" />
+	<sample weight="1" path="infernus/infernus_shoot_02.wav" />
+	<sample weight="1" path="infernus/infernus_shoot_03.wav" />
+	<sample weight="1" path="infernus/infernus_shoot_04.wav" />
+	<sample weight="1" path="infernus/infernus_shoot_05.wav" />
+	<sample weight="1" path="infernus/infernus_shoot_06.wav" />
+	<sample weight="1" path="infernus/infernus_shoot_07.wav" />
+	<sample weight="1" path="infernus/infernus_shoot_08.wav" />
+	<sample weight="1" path="infernus/infernus_shoot_09.wav" />
+	</sound>
+	<sound name="Infernus Tear Impact">
+	<sample weight="1" path="infernus/infernus_tear_impact_01.wav" />
+	<sample weight="1" path="infernus/infernus_tear_impact_02.wav" />
+	<sample weight="1" path="infernus/infernus_tear_impact_03.wav" />
+	<sample weight="1" path="infernus/infernus_tear_impact_04.wav" />
+	<sample weight="1" path="infernus/infernus_tear_impact_05.wav" />
+	<sample weight="1" path="infernus/infernus_tear_impact_06.wav" />
+	<sample weight="1" path="infernus/infernus_tear_impact_07.wav" />
+	<sample weight="1" path="infernus/infernus_tear_impact_08.wav" />
+	<sample weight="1" path="infernus/infernus_tear_impact_09.wav" />
+	<sample weight="1" path="infernus/infernus_tear_impact_10.wav" />
+	</sound>
+	<sound name="Infernus Pain">
+	<sample weight="1" path="infernus/infernus_pain_01.wav" />
+	<sample weight="1" path="infernus/infernus_pain_02.wav" />
+	<sample weight="1" path="infernus/infernus_pain_03.wav" />
+	<sample weight="1" path="infernus/infernus_pain_04.wav" />
+	<sample weight="1" path="infernus/infernus_pain_05.wav" />
+	<sample weight="1" path="infernus/infernus_pain_06.wav" />
+	<sample weight="1" path="infernus/infernus_pain_07.wav" />
+	<sample weight="1" path="infernus/infernus_pain_08.wav" />
+	</sound>
+	<sound name="Infernus Death">
+	<sample weight="1" path="infernus/infernus_death_01.wav" />
+	<sample weight="1" path="infernus/infernus_death_02.wav" />
+	<sample weight="1" path="infernus/infernus_death_03.wav" />
+	<sample weight="1" path="infernus/infernus_death_04.wav" />
+	</sound>
+
+	<sound name="Boon Acquire">
+	<sample weight="1" path="boon_acquire_01.wav" />
+	<sample weight="1" path="boon_acquire_02.wav" />
+	<sample weight="1" path="boon_acquire_03.wav" />
+	<sample weight="1" path="boon_acquire_04.wav" />
+	</sound>
+
+	<sound name="Ability Upgrade">
+	<sample weight="1" path="upgrade_ability_01.wav" />
+	<sample weight="1" path="upgrade_ability_02.wav" />
+	<sample weight="1" path="upgrade_ability_03.wav" />
+	<sample weight="1" path="upgrade_ability_04.wav" />
+	</sound>
+	<!-- Fleeboo -->
+	<sound name="fleeboh hort">
+		<sample weight="1" path="hort.wav" />
+	</sound>
+	<sound name="fleeboh death">
+		<sample weight="1" path="death.wav" />
+	</sound>
+</sounds>

@@ -1,0 +1,33 @@
+<costumes anm2root="gfx/characters/">
+	<!-- Beelze -->
+	<costume id="0" anm2path="costume_beelze.anm2" type="none" priority="99"/>
+	<costume id="1" anm2path="costume_beelze_alt.anm2" type="none" priority="99" hasSkinAlt="true"/>
+	
+	<costume id="2" anm2path="costume_botflymaggot.anm2" type="none" priority="101"/>
+	<!-- Robert -->
+    <costume id="3" anm2path="robert_body_costume.anm2" type="none" hasSkinAlt="true" />
+    <costume id="4" anm2path="robert_conpat_costume.anm2" type="none" hasSkinAlt="true" />
+    <costume id="5" anm2path="robertb_costume.anm2" type="none" priority="99" />
+	<!-- Hagar -->
+    <costume id="6" anm2path="hagar_hair.anm2" type="none" priority="99" />
+    <costume id="7" anm2path="thagar_hair.anm2" type="none" priority="99" />
+	<!-- Churchill -->
+    <costume id="8" anm2path="costume_churchill.anm2" type="none" priority="99"/>
+    <costume id="9" anm2path="costume_taintedchurchill.anm2" type="none" priority="99"/>
+	<!-- Hart -->
+	<costume id="10" type="none" anm2path="character_hartantlers.anm2" priority="99"/>
+	<costume id="11" type="none" anm2path="character_t_hartantlers.anm2" priority="99"/>
+	<!-- Anima -->
+    <costume id="12" anm2path="179_fate.anm2"  priority="101" type="none" hasSkinAlt="true" isFlying="true"/>
+
+	<costume id="13" anm2path="anima_mask_happy.anm2" priority="99" type="none" hasSkinAlt="false" />
+	<costume id="14" anm2path="anima_mask_sad.anm2" priority="99" type="none" hasSkinAlt="false" />
+	<!-- Infernus -->
+	<costume anm2path="c_infernus.anm2" id="15" type="none" priority="99" />
+	<costume anm2path="c_infernus_b.anm2" id="16" type="none" priority="99" />
+	<!-- Random? -->
+    <costume id="17" anm2path="costume_options.anm2" type="none"/>
+    <costume id="18" anm2path="costume_option_trinity.anm2" priority="99" type="none"/>
+
+    <costume id="19" anm2path="costume_random.anm2" type="none" priority="99" hasSkinAlt="true"/>
+</costumes>

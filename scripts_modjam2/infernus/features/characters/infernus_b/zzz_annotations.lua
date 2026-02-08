@@ -1,0 +1,6 @@
+---@class InfernusAltData
+---@field InfernusAltSelectingAbility boolean
+---@field InfernusAltSelectedIndex integer
+---@field InfernusAbilityIDs InfernusAbilityId[] | integer[]
+---@field InfernusRemainingAbilities integer
+---@field InfernusSelectionOptions integer[]

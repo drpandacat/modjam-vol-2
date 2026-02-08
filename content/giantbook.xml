@@ -1,0 +1,8 @@
+<giantbook anm2root="gfx/ui/giantbook/">
+	<!-- Fleeboo -->
+	<entry name="Evil How to Jump" anm2="GiantBook.anm2" anim="Appear" gfx="evilhowtojump.png">
+		<layer name="poof" r="128" g="128" b="128" a="255" />
+		<layer name="bg" r="25" g="25" b="25" a="255" />
+		<layer name="poof2" r="255" g="255" b="255" a="128" />
+	</entry>
+</giantbook>

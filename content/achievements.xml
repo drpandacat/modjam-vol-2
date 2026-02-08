@@ -1,0 +1,20 @@
+<achievements gfxroot="gfx/ui/achievements/">
+    <!-- Beelze -->
+	<achievement name="The Verminous" gfx="achievement_theverminous.png"/>
+    <!-- Robert -->
+    <achievement name="RobertUnlock" text="Unlocked Robert" gfx="robert_unlock.png"/>
+    <achievement name="RobertBUnlock" text="Unlocked Robert" gfx="robert_b_unlock.png"/>
+    <!-- Hagar -->
+    <achievement name="THagarUnlock" text='You unlocked "Hagar"' gfx="thagar_unlock.png"/>
+    <!-- Churchill -->
+    <achievement name="TaintedChurchill" text="You unlocked 'Tainted Churchill'" gfx="achievement_taintedchurchill.png" />
+    <!-- Hart -->
+    <achievement name="Tainted Hart" text="You got the hart!" gfx="achievement_hartb.png" />
+    <!-- Anima -->
+    <achievement name="Tainted Anima" text="You unlocked 'Anima'" gfx="mjanima.png" />
+    <!-- Infernus -->
+	<achievement name="INFERNUS_TAINTED_INFERNUS" text='You unlocked "Infernus"' gfx="achievement_b95cmj_infernusB.png">
+	</achievement>
+    <!-- Bonus -->
+    <achievement name="Mod Jam Bonus Characters" gfx="mjfreaks.png"/>
+</achievements>

@@ -1,0 +1,5 @@
+<wisps gfxroot="gfx/familiars/wisps/">
+	<!-- Anima -->
+	<!-- Persona (nullifying item wisps) -->
+	<wisp id="1" count="0" />
+</wisps>

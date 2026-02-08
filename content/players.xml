@@ -1,0 +1,150 @@
+<players root="gfx/characters/costumes/" portraitroot="gfx/ui/stage/" nameimageroot="gfx/ui/boss/">
+    <!-- Beelze -->
+    <player name="Beelze" heartcontainers="6" redhearts="6" birthright="Stronger swarm" skin="beelze_skin.png" items="480"
+        firedelaymodifier="-0.33" nameimage="beelze_name.png" portrait="beelze_portrait.png" skinColor="-1"
+        modcostume="0" costumeSuffix="beelze"/>
+	 <player name="Beelze" bSkinParent="Beelze" heartcontainers="6" redhearts="6" birthright="Stronger infestation" skin="beelze_skin_alt.png"
+        firedelaymodifier="-0.33" nameimage="beelze_name.png" portrait="beelze_portrait_alt.png" skinColor="-1"
+        modcostume="1" costumeSuffix="beelze" achievement="The Verminous"/>
+    <!-- Robert -->
+	<player name="Robert" skin="Character_Robert.png" costumeSuffix="robert"
+        hp="6" keys="2"
+        speedmodifier="0.1" shotspeedmodifier="0.3" luckmodifier="2"
+        modcostume="3" achievement="RobertUnlock"
+        nameimage="PlayerName_Robert.png" 
+        portrait="PlayerPortrait_Robert.png" skinColor="-1"
+		birthright="Backrooms access" />
+	<player name="Robert" skin="Character_RobertB.png" costumeSuffix="robert"
+        hp="6" keys="2"
+        speedmodifier="0.2" shotspeedmodifier="0.3" luckmodifier="2"
+        modcostume="5" achievement="RobertBUnlock" bSkinParent="Robert"
+        nameimage="PlayerName_Robert.png" 
+        portrait="PlayerPortrait_RobertB.png" skinColor="-1"
+		birthright="Deadline anxiety" />
+    <!-- Hagar -->
+    <player
+        name="Hagar" skin="character_hagar.png" pocketActive="El Roi"
+        healthtype="1" heartcontainers="0" soulhearts="6"
+        damagemodifier="-1.16666" rangemodifier="2"
+        nameimage="playername_hagar.png" 
+        portrait="playerportrait_hagar.png" skinColor="-1" modcostume="6"
+        birthright="More to sacrifice"
+    />
+
+    <player
+        bSkinParent="Hagar" achievement="THagarUnlock"
+        name="Hagar" skin="character_thagar.png" pocketActive="Zamzam"
+        healthlimit="8" firedelaymodifier="-0.4"
+        heartcontainers="0" soulhearts="6" card="7"
+        nameimage="playername_hagar.png" costumeSuffix="thagar"
+        portrait="playerportrait_thagar.png" skinColor="-1" modcostume="7"
+        birthright="Bubble pop"
+    />
+    <!-- Churchill -->
+	<player birthright="Supercharge blasts +5 bombs" name="Churchill"
+		nameimage="name_churchill.png" portrait="portrait_churchill.png" skin="character_churchill.png"
+		skinColor="5"
+		modcostume="8"
+
+		heartcontainers="6" redhearts="6" soulhearts="2"
+		bombs="1"
+	/>
+
+	<player name="Churchill"
+		skin="character_tainted_churchill.png" portrait="portrait_tainted_churchill.png" nameimage="name_churchill.png"
+		modcostume="9" costumeSuffix="tainted_churchill" bSkinParent="Churchill"
+		birthright="Well Oiled"
+		heartcontainers="6" redhearts="2" soulhearts="4"
+		keys="1"
+		achievement="TaintedChurchill"
+	/>
+    <!-- Hart -->
+	<player name="Hart" costumeSuffix="hart" skin="character_hart.png" skinColor="-1" modCostume="10" 
+		portrait="playerportrait_hart.png" nameimage="playername_hart.png" noshake="true" 
+		heartContainers="6" redHearts="2" rottenHearts="2" 
+		rangeModifier="-2" speedModifier="0.3" luckModifier="-2" 
+		birthright="Haemorrhage"/>
+
+	<player name="Hart" costumeSuffix="t_hart" skin="character_t_hart.png" skinColor="-1" modCostume="11" 
+		portrait="playerportrait_t_hart.png" nameimage="playername_hart.png"
+		heartContainers="4" redHearts="4" soulHearts="2" 
+		rangeModifier="-2" speedModifier="-0.2" luckModifier="-2" 
+		birthright="Deep freeze"
+		achievement="Tainted Hart" bSkinParent="Hart"
+	/>
+    <!-- Anima -->
+	<player name="Anima" skin="character_anima.png" hp="4"
+          nameimage="playername_anima.png"
+          portrait="playerportrait_anima.png"
+          skinColor="5" costumeSuffix="anima"
+          items="Persona"
+          birthright="Stronger masks" />
+
+          <player name="Anima_Decoy" skin="character_anima.png"
+          nameimage="playername_anima.png"
+          portrait="playerportrait_anima.png"
+          skinColor="5" costumeSuffix="anima" costume="53" armor="6" healthtype="1" healthlimit="6" hidden="true" />
+
+    <player name="Anima" bSkinParent="Anima" skin="character_banima.png" hp="4" achievement="Tainted Anima"
+          nameimage="playername_anima.png"
+          portrait="playerportrait_anima_b.png"
+          skinColor="5" costumeSuffix="anima"
+          pocketActive="Dual Role"
+          birthright="Go off-script" />
+    <!-- Infernus -->
+    <player name="Infernus" birthright="Jezebel" skin="p_Infernus.png" nameimage="pn_Infernus.png" portrait="pp_Infernus.png" bigportrait="pp_Infernus.png" skinColor="3" costumeSuffix="infernus" modcostume="15"  hurtsound="Infernus Pain" deathsound="Infernus Death" hp="4" black="2" coins="1" damagemodifier="-1.0" />
+
+    <player name="Infernus" bSkinParent="Infernus" birthright="-" skin="p_Infernus_B.png" nameimage="pn_Infernus.png" portrait="pp_Infernus_B.png" bigportrait="pp_Infernus_B.png" skinColor="2" costumeSuffix="infernus" modcostume="16" hurtsound="Infernus Pain" deathsound="Infernus Death" hp="4" black="2" coins="1" speedmodifier=".3" damagemodifier="-1.0" achievement="INFERNUS_TAINTED_INFERNUS" />
+    <!-- Gloopy20 -->
+	<player name="Gloopy20" skin="gloopychar.png" costumeSuffix="gloopy" hideachievement="Mod Jam Bonus Characters"
+        hp="6" items="323" 
+        nameimage="gloopyname.png" 
+        portrait="gloopyportrait.png" skinColor="-1"
+		birthright="Welcome Connor" />
+	<player name="Gloopy20" skin="gloopychar.png" costumeSuffix="gloopy" bSkinParent="Gloopy20"
+        hp="6" items="323" 
+        nameimage="gloopyname.png" 
+        portrait="gloopyportrait.png" skinColor="-1"
+		birthright="Goodbye Connor" />
+    <!-- Fleeboo -->
+    <player name="Fleeboh" hideachievement="Mod Jam Bonus Characters"
+        skin="character_fleeboh.png"
+        nameimage="playername_fleeboh.png"
+        hp="2"
+        broken="10"
+        bombs="1"
+        portrait="playerportrait_fleeboh.png"
+        skinColor="-1"
+        pocketActive="282"
+        birthright="Fleeboo was never born."
+
+        hurtsound="fleeboh hort"
+        deathsound="fleeboh death"
+    />
+    <player name="Fleebee" hideachievement="Mod Jam Bonus Characters"
+        skin="character_fleebee.png"
+        nameimage="playername_fleebee.png"
+        hp="4"
+        broken="9"
+        bombs="1"
+        portrait="playerportrait_fleebee.png"
+        skinColor="-1"
+        pocketActive="Evil How to Jump"
+        birthright="Fleebee is broken."
+
+        hurtsound="fleeboh hort"
+        deathsound="fleeboh death"
+
+        bSkinParent="Fleeboh"
+    />
+    <!-- Random? -->
+	<player birthright="There might be more options" name="Random?"
+		nameimage="name_random.png" portrait="portrait_random.png" skin="character_random.png"
+		skinColor="3"
+		modcostume="17"
+
+		heartcontainers="4" redhearts="4"
+
+		hidden="true"
+	/>
+</players>

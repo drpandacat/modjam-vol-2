@@ -1,0 +1,58 @@
+<items gfxroot="gfx/items/" deathanm2="gfx/deathitems.anm2" version="1">
+	<!-- Beelze -->
+	<null id="2" name="Botfly Maggot"/>
+	<!-- Robert -->
+    <null name="Robert Deadline Tracker" persistent="true" />
+    <null name="Robert Max Deadline" persistent="true" />
+    <null name="Robert Boss Bonus Tracker"/>
+    <null name="Robert Deadline Anxiety" persistent="true" damage="0.2" speed="0.066" tears="0.2"/>
+    <active id="0" name="Clock In" description="Boss makes a dollar" gfx="robert_clockin.png" tags="noeden nocantrip" maxcharges="0" hidden="true" quality="0" craftquality="0" persistent="true"/>
+    <active id="1" name="Clock Out" description="I make a dime" gfx="robert_clockout.png" tags="noeden nocantrip" maxcharges="0" hidden="true" quality="0" craftquality="0" persistent="true"/>
+    <active id="2" name="Clocked Out!" description="I make a dime" gfx="robert_clockedout.png" tags="noeden nocantrip" maxcharges="0" hidden="true" quality="0" craftquality="0" persistent="true"/>
+    <!-- Hagar -->
+    <active
+        id="3" name="El Roi" description="The light which sees me" gfx="el_roi.png"
+        maxcharges="3" quality="3" craftquality="3" tags="offensive"
+    />
+
+    <active
+        id="4" name="Zamzam" description="Nurture" gfx="zamzam.png"
+        maxcharges="0" quality="3" craftquality="3" tags="offensive" hidden="true" customtags="nometronome"
+    />
+
+    <null name="(Hagar Null) Hagar Red Heart Counter" persistent="true" />
+    <null name="(Hagar Null) Hagar Birthright Effect" flattears="1.5" damage="1" />
+    <null name="(THagar Null) Zamzam Tears Bonus" cache="firedelay" persistent="true" />
+    <!-- Churchill -->
+    <null name="Tainted Churchill Jam" persistent="true"/>
+    <null name="Tainted Churchill Rotation Speed Up" tearsmult="1.21"/>
+    <!-- Anima -->
+    <active id="5" name="Persona" description="Your own mask" gfx="collectibles_anima_persona.png" activegfx="collectibles_anima_persona_ui.png" cache="firedelay damage speed" maxcharges="4" passivecache="true" hidden="true" quality="3" craftquality="-1" tags="offensive nocantrip noeden" customcache="statmultiplier"/>
+    <active id="6" name="Dual Role" description="Who am I?" gfx="dual_role.png" activegfx="dual_role_hud.png" cache="firedelay damage speed" maxcharges="3" initcharge="0" passivecache="true" hidden="true" quality="3" craftquality="-1" tags="offensive nocantrip noeden" customcache="statmultiplier"/>
+
+    <null name="lazarus persona revival" persistent="true" customtags="reviveeffect" />
+    <null id="12" name="lazarus persona post revive" persistent="true" cache="flying damage speed" speed="0.25" customcache="statmultiplier" />
+
+    <null id="13" name="Tainted Anima Mask Happy" persistent="true" />
+    <null id="14" name="Tainted Anima Mask Sad" persistent="true" />
+    <null name="AnimaTragedy T Magdalene" persistent="true" cooldown="600" />
+    <!-- Infernus -->
+    <active name="Boons Rewards" description="From the Patron" gfx="deadlock.png" id="7"
+    quality="4" maxcharges="0"
+    tags="offensive" customtags="nometronome" />
+
+    <active id="8" name="Napalm" description="Light 'em up!" gfx="napalm.png" quality="2" maxcharges="4" chargetype="normal"/>
+    <null name="Ability Point" persistent="true"/> <!-- THE TRUE ID 0 NULL ITEM. IT SHOULD BE THIS ONE, EVEN IF IT DOESNT MATTERWhat is blud wafflin about-->
+
+    <null name="Napalm" persistent="true"/>
+
+    <null name="Flame Dash" persistent="true"/>
+
+    <null name="Temp Dash" speed="0.3" persistent="true" cooldown="45"/> <!-- Temp item to make dash simpler -->
+
+    <null name="Afterburn" persistent="true"/>
+
+    <null name="Concussive Combustion" persistent="true"/>
+    <!-- Fleeboo -->
+    <active id="9" name="Evil How to Jump" description="Muahahaha!" gfx="evilhowtojump.png" quality="4" craftquality="4" tags="offensive" maxcharges="0"/>
+</items>
