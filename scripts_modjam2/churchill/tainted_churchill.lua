@@ -1,7 +1,3 @@
---TODO:
---add line sprites
---add sfx for picking up gear pieces
-
 local JAM_NULL_ID = Isaac.GetNullItemIdByName("Tainted Churchill Jam")
 local ROTATION_NULL_ID = Isaac.GetNullItemIdByName("Tainted Churchill Rotation Speed Up")
 
@@ -46,14 +42,35 @@ local function jamPlayer(player) --this needs leaver prevention logic. Ideally, 
 
     sfx:Play(ChurchillMod.SFX_JAM, 1, 2, false, math.random()*0.4+0.6) --dont go mad
 
+    player:GetData().PathFinderGaper = player:GetData().PathFinderGaper or game:Spawn(EntityType.ENTITY_GAPER, 0, player.Position, Vector.Zero, player, 0, 1):ToNPC()
+
+    local room = game:GetRoom()
+
     for i = 1, GEAR_COUNT, 1 do
-        local endPos = game:GetRoom():GetRandomPosition(20)
 
-        while not game:GetRoom():CheckLine(player.Position, endPos, LineCheckMode.ENTITY) do
-            endPos = game:GetRoom():GetRandomPosition(20)
+        if not player:GetData().PathFinderGaper then return end
+        player:GetData().PathFinderGaper.EntityCollisionClass = EntityCollisionClass.ENTCOLL_NONE
+
+        local tryCount = 0
+
+        ::again::
+        local endPos = room:FindFreePickupSpawnPosition(room:GetRandomPosition(40))
+
+        if not player:GetData().PathFinderGaper:GetPathfinder():HasPathToPos(endPos, false) then
+            endPos = room:FindFreePickupSpawnPosition(room:GetRandomPosition(40))
+            
+            tryCount = tryCount + 1
+            print(tryCount)
+            if tryCount <= 10 then
+                goto again
+            else
+                endPos = room:FindFreePickupSpawnPosition(player.Position)
+                tryCount = 0
+            end
         end
+        player:GetData().PathFinderGaper:Remove()
 
-        local gearPiece = game:Spawn(EntityType.ENTITY_PICKUP, GEAR_PIECE_ID, player.Position, Vector.Zero, player, 0, 1) --game:Spawn(EntityType.ENTITY_EFFECT, GEAR_PIECE_ID, pos, Vector.Zero, player, 0, 1):ToEffect()
+        local gearPiece = game:Spawn(EntityType.ENTITY_PICKUP, GEAR_PIECE_ID, player.Position, Vector.Zero, player, 0, 1):ToPickup() --game:Spawn(EntityType.ENTITY_EFFECT, GEAR_PIECE_ID, pos, Vector.Zero, player, 0, 1):ToEffect()
         if not gearPiece then return end
 
         gearPiece:GetData().endPos = endPos
@@ -101,6 +118,7 @@ local function gearPieceUpdate(_, pickup)
 
         pickup.Velocity = dir * dist/10
         --effect:AddVelocity(dir*0.005)
+        pickup.GridCollisionClass = EntityGridCollisionClass.GRIDCOLL_WALLS
     else
         pickup.Velocity = Vector.Zero
         data.Pickable = true
