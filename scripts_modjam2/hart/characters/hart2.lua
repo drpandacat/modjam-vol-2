@@ -282,7 +282,6 @@ local function freezeOnHit(_, ent, _, flag, _, _)
             local hasBirthright = pl:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT)
             
             if(pl:GetIceCountdown()==0 and not pl:HasEntityFlags(EntityFlag.FLAG_ICE)) then
-                print("chud")
                 pl:AddIce(EntityRef(nil), -ONHIT_FREEZE_DURATION) -- i didnt know this works as a setter, thanks foks!
             end
             pl:SetMinDamageCooldown((pl:GetDamageCooldown()*IFRAMES_MULTIPLIER)//1)
