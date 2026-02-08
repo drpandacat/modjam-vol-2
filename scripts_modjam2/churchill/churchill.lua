@@ -241,3 +241,32 @@ local function churchillDamageMult(_, pl)
     pl.Damage = pl.Damage*DMG_MULT
 end
 ChurchillMod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, churchillDamageMult, CacheFlag.CACHE_DAMAGE)
+
+---@param pl EntityPlayer
+local function removeBonusOnNewRoom(_, pl)
+    local data = pl:GetData()
+    data.TARGET_TEARS = 0
+    data.CURRENT_TEARS = 0
+    data.WINDUP = 0
+    data.SUPERCHARGE = false
+
+    local map = pl:GetCostumeLayerMap()
+    local descs = pl:GetCostumeSpriteDescs()
+    for _, mapdata in ipairs(map) do
+        if(mapdata.costumeIndex~=-1) then
+            local desc = descs[mapdata.costumeIndex+1]
+            local costumeSp = desc:GetSprite()
+
+            if(string.find(costumeSp:GetFilename(), "costume_churchill")) then
+                local path = "gfx/characters/costumes/costume_churchill0.png"
+                costumeSp:ReplaceSpritesheet(0, path)
+                costumeSp:LoadGraphics()
+            end
+        end
+    end
+
+    sfx:Stop(ChurchillMod.SFX_WINDDOWN)
+
+    pl:AddCacheFlags(CacheFlag.CACHE_FIREDELAY, true)
+end
+ChurchillMod:AddCallback(ModCallbacks.MC_POST_PLAYER_NEW_ROOM_TEMP_EFFECTS, removeBonusOnNewRoom, ChurchillMod.PLAYER_CHURCHILL)
