@@ -555,7 +555,8 @@ mod:AddCallback(ModCallbacks.MC_POST_ENTITY_KILL, function (_, ent, killSource)
     if ent.Type < 10 or ent.Type > 999 then return end
     if ent.MaxHitPoints < 10 then return end
     local entConfig = EntityConfig.GetEntity(ent.Type, ent.Variant)
-    if not (entConfig and (entConfig:HasEntityTags(EntityTag.FLY) or entConfig:HasEntityTags(EntityTag.SPIDER))) then return end
+    if not entConfig then return end
+    if entConfig:HasEntityTags(EntityTag.FLY) or entConfig:HasEntityTags(EntityTag.SPIDER) then return end
     if game:GetRoom():IsClear() then return end
 
     local player = utils:GetPlayerFromEntityRef(killSource)
