@@ -67,13 +67,6 @@ function combustion:OnCast(ability, player)
 
 end
 
-local function muteExplosionSoundDuringUlt()
-    if DeadlockMod.sfx:IsPlaying(DeadlockMod.SoundID.InfernusAbilities.CONCUSSIVE_COMBUSTION.EXPLOSION) then
-        return false
-    end
-end
-DeadlockMod:AddCallback(ModCallbacks.MC_PRE_SFX_PLAY, muteExplosionSoundDuringUlt, SoundEffect.SOUND_BOSS1_EXPLOSIONS)
-
 ---@param effect EntityEffect
 local function explosionUpdate(_, effect)
     local sprite = effect:GetSprite()

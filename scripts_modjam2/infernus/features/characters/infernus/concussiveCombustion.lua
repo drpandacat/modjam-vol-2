@@ -67,12 +67,17 @@ function combustion:OnCast(ability, player)
 
 end
 
+local muteFrame = 0
+
 local function muteExplosionSoundDuringUlt()
-    if DeadlockMod.sfx:IsPlaying(DeadlockMod.SoundID.InfernusAbilities.CONCUSSIVE_COMBUSTION.EXPLOSION) then
-        return false
-    end
+    if Isaac.GetFrameCount() - muteFrame > 300 then return end
+    return false
 end
 DeadlockMod:AddCallback(ModCallbacks.MC_PRE_SFX_PLAY, muteExplosionSoundDuringUlt, SoundEffect.SOUND_BOSS1_EXPLOSIONS)
+
+DeadlockMod:AddCallback(ModCallbacks.MC_PRE_SFX_PLAY, function ()
+    muteFrame = Isaac.GetFrameCount()
+end, DeadlockMod.SoundID.InfernusAbilities.CONCUSSIVE_COMBUSTION.EXPLOSION)
 
 ---@param effect EntityEffect
 local function explosionUpdate(_, effect)
