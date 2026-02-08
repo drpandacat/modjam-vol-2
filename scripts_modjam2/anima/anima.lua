@@ -1178,7 +1178,8 @@ function mod:HandlePlayerNewRoom(player)
 
     --remove current persona if we can't find item on current floor
     if not player:HasCurseMistEffect() and storage.CurrentPersona ~= mod.Anima.AnimaPersonas.NONE then
-        if not player:HasCollectible(constants.Items.Persona) then
+        local has = player:HasCollectible(constants.Items.Persona)
+        if not has then
             if player:HasCollectible(constants.Items.DualRole) then
                 lostPersona = false
             else
@@ -1209,7 +1210,10 @@ function mod:HandlePlayerNewRoom(player)
                 end
             end
         end
-        if lostPersona then
+        if lostPersona and (
+            not has
+            or player:GetPlayerType() == constants.Players.TaintedAnima
+        ) then
             mod.Anima.RemovePersonaFromPool(player)
         end
     end
