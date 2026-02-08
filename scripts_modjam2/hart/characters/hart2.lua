@@ -279,12 +279,16 @@ local function freezeOnHit(_, ent, _, flag, _, _)
     if(pl and pl:GetPlayerType()==mod.Character.HART_B) then
         local doVfx = false
         if(not pl:IsDead() and flag & (DamageFlag.DAMAGE_RED_HEARTS | DamageFlag.DAMAGE_NO_PENALTIES) == 0) then
-            local oldicecount = pl:GetIceCountdown()
-            pl:AddIce(EntityRef(nil), -ONHIT_FREEZE_DURATION) -- i didnt know this works as a setter, thanks foks!
+            local hasBirthright = pl:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT)
+            
+            if(pl:GetIceCountdown()==0 and not pl:HasEntityFlags(EntityFlag.FLAG_ICE)) then
+                print("chud")
+                pl:AddIce(EntityRef(nil), -ONHIT_FREEZE_DURATION) -- i didnt know this works as a setter, thanks foks!
+            end
             pl:SetMinDamageCooldown((pl:GetDamageCooldown()*IFRAMES_MULTIPLIER)//1)
             pl:SetCanShoot(false)
 
-            if(pl:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT)) then
+            if(hasBirthright) then
                 pl:PlayExtraAnimation("IceBlock")
                 pl:AddCacheFlags(CacheFlag.CACHE_SIZE)
                 pl:EvaluateItems()
