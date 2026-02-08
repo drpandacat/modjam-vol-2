@@ -60,7 +60,7 @@ local function jamPlayer(player) --this needs leaver prevention logic. Ideally, 
             endPos = room:FindFreePickupSpawnPosition(room:GetRandomPosition(40))
             
             tryCount = tryCount + 1
-            print(tryCount)
+            -- print(tryCount)
             if tryCount <= 10 then
                 goto again
             else
