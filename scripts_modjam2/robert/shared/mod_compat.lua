@@ -10,6 +10,7 @@ local function PostModsLoaded()
     end
 
     if EID then
+        EID:addCharacterInfo(ROBERT_MOD.PlayerType.ROBERT, "#{{ArrowUp}}Additional special rooms generate on each floor and are always visible#{{ArrowDown}}Robert can only walk through a limited amount of rooms each floor#{{Warning}}Automatically teleports to the boss after exceeding the room limit#{{ArrowUp}}Beating the boss without exceeding the room limit spawns an extra item", "Robert")
         EID:addBirthright(mod.PlayerType.ROBERT, "Spawns a {{ColorSilver}}Backrooms Access Keycard{{CR}} at the start of each floor and on first pickup#{{ColorSilver}}Keycard{{CR}} opens a single-use shortcut to an unvisited special room#{{Warning}}Stops working on later floors")
         EID:addCard(mod.Card.EXIT_KEYCARD, "Creates temporary door at the nearest valid slot#Door leads to an unvisited special room#{{Warning}} Door will prioritise rooms in the direction its facing")
         EID:addCondition("5.300." .. tostring(mod.Card.EXIT_KEYCARD), EID.IsGreedMode, "{{GreedMode}} Door leads to an {{ColorGray}}I AM ERROR{{CR}} room instead")
