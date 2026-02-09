@@ -34,7 +34,7 @@ mod:AddCallback(ModCallbacks.MC_POST_NPC_INIT, function (_, npc)
     if not npc:IsActiveEnemy() then return end
     if mod.Enums.Blacklists.MonsterHPUp:IsBlacklisted(npc) then return end
 
-    npc.MaxHitPoints = mod.Lib.ScaleUpMonsterHealth(npc.MaxHitPoints)
+    npc.MaxHitPoints = mod.Lib.ScaleUpMonsterHealth(npc.MaxHitPoints, npc:IsBoss())
     npc.HitPoints = npc.MaxHitPoints
     npc:SetColor(PULSE_COLOR, 45, 1, true, false)
 end)
@@ -175,7 +175,10 @@ mod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, function ()
     else
         for _, player in ipairs(PlayerManager.GetPlayers()) do
             if player:GetPlayerType() == character then
-                player:AddInnateCollectible(CollectibleType.COLLECTIBLE_THERES_OPTIONS, -1)
+                local innateOptionsCount = player:GetCollectibleNum(CollectibleType.COLLECTIBLE_THERES_OPTIONS) - player:GetCollectibleNum(CollectibleType.COLLECTIBLE_THERES_OPTIONS, true, true)
+                if innateOptionsCount > 0 then
+                    player:AddInnateCollectible(CollectibleType.COLLECTIBLE_THERES_OPTIONS, -1)
+                end
             end
         end
     end

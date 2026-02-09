@@ -22,7 +22,10 @@ mod:AddCallback(ModCallbacks.MC_USE_ITEM, function (_, item, rng, player, flags,
         if heartCounters >= cost then
             fx:RemoveNullEffect(mod.Enums.NullItems.HAGAR_HEART_COUNTER, cost)
             fx:AddCollectibleEffect(CollectibleType.COLLECTIBLE_WAFER)
-            player:AddInnateCollectible(CollectibleType.COLLECTIBLE_THERES_OPTIONS, -1)
+            local innateOptionsCount = player:GetCollectibleNum(CollectibleType.COLLECTIBLE_THERES_OPTIONS) - player:GetCollectibleNum(CollectibleType.COLLECTIBLE_THERES_OPTIONS, true, true)
+            if innateOptionsCount > 0 then
+                player:AddInnateCollectible(CollectibleType.COLLECTIBLE_THERES_OPTIONS, -1)
+            end
             if doBirthrightEffect then
                 fx:AddNullEffect(mod.Enums.NullItems.HAGAR_BIRTHRIGHT_EFFECT)
             end
@@ -56,7 +59,7 @@ mod:AddCallback(ModCallbacks.MC_USE_ITEM, function (_, item, rng, player, flags,
 
         for _, ent in ipairs(monsters) do
             local healthPercentage = ent.HitPoints / ent.MaxHitPoints
-            ent.MaxHitPoints = mod.Lib.ScaleDownMonsterHealth(ent.MaxHitPoints)
+            ent.MaxHitPoints = mod.Lib.ScaleDownMonsterHealth(ent.MaxHitPoints, ent:IsBoss())
             ent.HitPoints = ent.MaxHitPoints * healthPercentage
             ent:SetColor(PULSE_COLOR, 30, 1, true, false)
         end

@@ -23,29 +23,36 @@ end
 --#region Hagar functions
 
 ---Get the multiplier for Hagar's gimmick of enemy's health being scaled up.
+---@param isBoss boolean?
 ---@return number
-function HAGAR_MOD.Lib.GetMonsterHealthMultiplier()
+function HAGAR_MOD.Lib.GetMonsterHealthMultiplier(isBoss)
+    isBoss = isBoss or false
     local level = game:GetLevel()
     local stage = math.ceil(level:GetAbsoluteStage() / 2)
     local ascentStage = level:IsAscent() and math.abs(stage - 7) or 0
     local multiplier = 0.2 * (stage + ascentStage - 1) ^ 1.8 + 1
+    if isBoss then multiplier = math.min(multiplier, 3) end
 
     return multiplier
 end
 
 ---Hagar's gimmick of increasing enemy HP based on the chapter.
 ---@param baseHP number
+---@param isBoss boolean?
 ---@return number
-function HAGAR_MOD.Lib.ScaleUpMonsterHealth(baseHP)
-    local multiplier = HAGAR_MOD.Lib.GetMonsterHealthMultiplier()
+function HAGAR_MOD.Lib.ScaleUpMonsterHealth(baseHP, isBoss)
+    isBoss = isBoss or false
+    local multiplier = HAGAR_MOD.Lib.GetMonsterHealthMultiplier(isBoss)
     return baseHP * multiplier
 end
 
 ---Reverse of Hagar's enemy HP up gimmick, used by her pocket active El Roi.
 ---@param baseHP number
+---@param isBoss boolean?
 ---@return number
-function HAGAR_MOD.Lib.ScaleDownMonsterHealth(baseHP)
-    local multiplier = HAGAR_MOD.Lib.GetMonsterHealthMultiplier()
+function HAGAR_MOD.Lib.ScaleDownMonsterHealth(baseHP, isBoss)
+    isBoss = isBoss or false
+    local multiplier = HAGAR_MOD.Lib.GetMonsterHealthMultiplier(isBoss)
     return baseHP / multiplier
 end
 
