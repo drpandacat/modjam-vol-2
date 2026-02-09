@@ -82,6 +82,7 @@ local function PostNewLevel()
             if data.Subtype == 34
             and data.Type == RoomType.ROOM_DEFAULT then
                 room.DisplayFlags = 7
+                room.Clear = true
                 break
             end
         end
@@ -93,6 +94,7 @@ local function PostNewLevel()
             if data.Subtype == 10
             and data.Type == RoomType.ROOM_DEFAULT then
                 room.DisplayFlags = 7
+                room.Clear = true
                 break
             end
         end
