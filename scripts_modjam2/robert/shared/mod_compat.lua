@@ -10,7 +10,7 @@ local function PostModsLoaded()
     end
 
     if EID then
-        EID:addBirthright(mod.PlayerType.ROBERT, "Spawns a {{ColorSilver}}Backrooms Access Keycard{{CR}} at the start of each floor and on first pickup#{{ColorSilver}}Keycard{{CR}} opens a single-use shortcut to an unvisited special room")
+        EID:addBirthright(mod.PlayerType.ROBERT, "Spawns a {{ColorSilver}}Backrooms Access Keycard{{CR}} at the start of each floor and on first pickup#{{ColorSilver}}Keycard{{CR}} opens a single-use shortcut to an unvisited special room#{{Warning}}Stops working on later floors")
         EID:addCard(mod.Card.EXIT_KEYCARD, "Creates temporary door at the nearest valid slot#Door leads to an unvisited special room#{{Warning}} Door will prioritise rooms in the direction its facing")
         EID:addCondition("5.300." .. tostring(mod.Card.EXIT_KEYCARD), EID.IsGreedMode, "{{GreedMode}} Door leads to an {{ColorGray}}I AM ERROR{{CR}} room instead")
 

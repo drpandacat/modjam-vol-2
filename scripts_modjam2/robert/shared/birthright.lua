@@ -3,7 +3,8 @@ local mod = ROBERT_MOD
 local game = Game()
 
 local function PostNewLevel()
-    if not PlayerManager.AnyPlayerTypeHasBirthright(mod.PlayerType.ROBERT) then
+    if not PlayerManager.AnyPlayerTypeHasBirthright(mod.PlayerType.ROBERT)
+    or ROBERT_MOD.IsStageBlacklisted() then
         return
     end
 
