@@ -25,7 +25,7 @@
     <null name="(THagar Null) Zamzam Tears Bonus" cache="firedelay" persistent="true" />
     <!-- Churchill -->
     <null name="Tainted Churchill Jam" persistent="true"/>
-    <null name="Tainted Churchill Rotation Speed Up" tearsmult="1.21"/>
+    <null name="Tainted Churchill Rotation Speed Up" flattears="1.8"/>
     <!-- Anima -->
     <active id="5" name="Persona" description="Your own mask" gfx="collectibles_anima_persona.png" activegfx="collectibles_anima_persona_ui.png" cache="firedelay damage speed" maxcharges="4" passivecache="true" hidden="true" quality="3" craftquality="-1" tags="offensive nocantrip noeden" customcache="statmultiplier"/>
     <active id="6" name="Dual Role" description="Who am I?" gfx="dual_role.png" activegfx="dual_role_hud.png" cache="firedelay damage speed" maxcharges="3" initcharge="0" passivecache="true" hidden="true" quality="3" craftquality="-1" tags="offensive nocantrip noeden" customcache="statmultiplier"/>

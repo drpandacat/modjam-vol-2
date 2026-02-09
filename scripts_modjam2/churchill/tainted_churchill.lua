@@ -194,11 +194,16 @@ local function minigame(_, player)
 end
 ChurchillMod:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, minigame)
 
-local vect = Vector(0, HANDS_SPRITE_OFFSET)
 ---@param player EntityPlayer
 local function allRenders(_, player, offset)
     if player:GetPlayerType() ~= ChurchillMod.PLAYER_CHURCHILL_B then return end
 
+    FINAL_HANDS_SPRITE_OFFSET = HANDS_SPRITE_OFFSET * player.SpriteScale.Y
+    local vect = Vector(0, FINAL_HANDS_SPRITE_OFFSET)
+    
+    bigHandSprite.Scale = player.SpriteScale
+    smallHandSprite.Scale = player.SpriteScale
+    
     bigHandSprite:Render(Isaac.WorldToScreen(player.Position + vect))
     smallHandSprite:Render(Isaac.WorldToScreen(player.Position + vect))
 end
