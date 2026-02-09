@@ -34,8 +34,10 @@ local function IsDepthsMomFight(level, roomData)
 end
 
 local function PostNewRoom()
+    local room = game:GetRoom()
     if not ROBERT_MOD:AnyoneIsRobert()
-    or game:IsGreedMode() then
+    or game:IsGreedMode()
+    or not room:IsFirstVisit() then
         return
     end
     local level = game:GetLevel()
@@ -51,22 +53,16 @@ local function PostNewRoom()
             nil
         )
     elseif IsDepthsMomFight(level, roomData) then
-        local room = game:GetRoom()
-        if room:IsFirstVisit() then
-            room:SpawnGridEntity(28, GridEntityType.GRID_ROCK_ALT2)
-        end
+        room:SpawnGridEntity(28, GridEntityType.GRID_ROCK_ALT2)
     elseif IsMineshaftRoom(level, roomData) then
-        local room = game:GetRoom()
-        if room:IsFirstVisit() then
-            Isaac.Spawn(
-                EntityType.ENTITY_PICKUP,
-                PickupVariant.PICKUP_TAROTCARD,
-                Card.CARD_HANGED_MAN,
-                Vector(320,480),
-                Vector.Zero,
-                nil
-            )
-        end
+        Isaac.Spawn(
+            EntityType.ENTITY_PICKUP,
+            PickupVariant.PICKUP_TAROTCARD,
+            Card.CARD_HANGED_MAN,
+            Vector(320,480),
+            Vector.Zero,
+            nil
+        )
     end
 end
 mod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, PostNewRoom)
