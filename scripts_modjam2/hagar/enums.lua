@@ -51,6 +51,7 @@ HAGAR_MOD.Enums.Blacklists.MonsterHPUp = {
     [EntityType.ENTITY_GRUDGE] = true,
     [EntityType.ENTITY_DUSTY_DEATHS_HEAD] = true,
     [EntityType.ENTITY_BALL_AND_CHAIN] = true,
+    [EntityType.ENTITY_GIDEON] = true,
     [EntityType.ENTITY_SIREN_HELPER] = true,
     [EntityType.ENTITY_DARK_ESAU] = true,
     [EntityType.ENTITY_FROZEN_ENEMY] = true,
