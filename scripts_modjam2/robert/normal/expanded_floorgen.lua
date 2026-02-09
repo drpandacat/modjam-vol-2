@@ -68,5 +68,11 @@ local function PostNewLevel()
         local room = RoomConfigHolder.GetRandomRoom(rng:Next(), false, StbType.SPECIAL_ROOMS, type, RoomShape.NUM_ROOMSHAPES, -1, -1, 0, 10, doorsNeeded)
         level:TryPlaceRoom(room, slot, Dimension.NORMAL)
     end
+
+    --Fix for a bug, where new rooms would only appear upon entering a new room.
+    --Hopefull it doesn't cause any nasty side effects.
+    if MinimapAPI then
+        MinimapAPI:LoadDefaultMap()
+    end
 end
 mod:AddPriorityCallback(ModCallbacks.MC_POST_NEW_LEVEL, CallbackPriority.LATE, PostNewLevel)
