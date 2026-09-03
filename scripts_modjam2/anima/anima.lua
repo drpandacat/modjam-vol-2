@@ -696,6 +696,9 @@ function mod.Anima.InitPersonasPool(player, rng)
     end
 end
 
+---@type EntityPtr?
+local initPool
+
 ---@param player EntityPlayer
 function mod.Anima.InitAnimaStorage(player)
     local pData = mod.SaveManager.GetRunSave(player) ---@type AnimaPlayerData
@@ -708,13 +711,23 @@ function mod.Anima.InitAnimaStorage(player)
     pData.AnimaCurrentStorage = { CurrentPersona = mod.Anima.AnimaPersonas.NONE, CurrentCostumeID = NullItemID.ID_NULL, PersonaActiveStatus = mod.Anima.PersonaActiveStatus.NORMAL, PersonaInnateItem = CollectibleType.COLLECTIBLE_NULL, HadPersonaBefore = false, LostDecoyPlayer = false, EdenPersonaStats = { 0, 0, 0, 0, 0, 0 }, LazarusUsedRevive = false, SeenDescriptions = { false, false, false, false, false, false, false, false, false, false, false, false } }
 
     if not pData.AnimaCurrentStorage.AnimaPersonas then
-        Isaac.CreateTimer(function()
-            mod.Anima.InitPersonasPool(player) --i hope it will not break the mod
-        end, 1, 1, false)
+        initPool = EntityPtr(player)
+        -- Isaac.CreateTimer(function()
+        --     mod.Anima.InitPersonasPool(player) --i hope it will not break the mod
+        -- end, 1, 1, false)
     end
 
     player:EvaluateItems()
 end
+
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, function ()
+    if not initPool then return end
+    if not initPool.Ref or not initPool.Ref:Exists() then
+        initPool = nil
+        return
+    end
+    mod.Anima.InitPersonasPool(initPool.Ref:ToPlayer())
+end)
 
 ---@param player EntityPlayer
 mod:AddCallback(ModCallbacks.MC_PLAYER_INIT_POST_LEVEL_INIT_STATS, function(_, player)

@@ -24,7 +24,7 @@ end
 -----------------
 local debugMessage = mod.Name .. " V" .. version .. " loaded successfully\n"
 
-Isaac.ConsoleOutput(debugMessage)
+-- Isaac.ConsoleOutput(debugMessage)
 Isaac.DebugString(debugMessage)
 
 return mod
